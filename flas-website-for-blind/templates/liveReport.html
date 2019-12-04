@@ -1,0 +1,42 @@
+<!doctype html>
+<title>Finl</title>
+
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css')}}"></head>
+<h1 align="center">take a pic ! &#128247; </h1>
+<!-- <a href="/download_img">view image !!</a> -->
+<p>
+   {% with messages = get_flashed_messages() %}<meta http-equiv="pragma" content="no-cache" />
+   {% if messages %}
+<ul class=flashes>
+   {% for message in messages %}
+   <li>{{ message }}</li>
+   {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+</p>
+<form method="post" action="/" enctype="multipart/form-data">
+   <dl>
+      <p>
+        <!-- onchange='if(this.value != 0) { this.form.submit(); }'  -->
+        <!-- Capture Image:<br><input  name="file" accept="image/*" id="capture"
+         capture="camera" type="file" class="button2" value="selecct img" onclick="style.display = 'none'"> -->
+ <h1><input  name="file" accept="image/*" id="capture"
+  capture="camera" type="file" class="upload"
+  value="selecct img" onclick="style.display = 'none'"></input></h1>
+        <!-- <input type="file" name="file" accept="image/*" id="capture" capture="camera"> -->
+        <!-- <br>           <input type="file" name="file" accept="image/*" id="capture" value="Mickey"><br> -->
+        <!-- <br>           <input type="file" name="file" autocomplete="off" required> -->
+      </p>
+   </dl>
+   <p>
+    <h1> <input type="submit" class="subB" value="submit &#128247;"> </h1>
+
+   </p>
+</form>
+</html>
